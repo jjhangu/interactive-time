@@ -14,10 +14,34 @@
         it.init();
 
         // 현재시간
+        function logDate(date ){
+            var month = (date.getMonth()+1) > 9 ? (date.getMonth()+1) : "0" + (date.getMonth()+1);
+            var day = (date.getDate()+1) > 9 ? (date.getDate()+1) : "0" + (date.getDate()+1);
+            var hours = (date.getHours()) > 9 ? (date.getHours()) : "0" + (date.getHours());
+            var minutes = (date.getMinutes()) > 9 ? (date.getMinutes()) : "0" + (date.getMinutes());
+            var seconds = (date.getSeconds()) > 9 ? (date.getSeconds()) : "0" + (date.getSeconds());
+
+            var dateString =
+                    month + "/" +
+                    day + "/" +
+                    date.getFullYear() + " " +
+                    hours + ":" +
+                    minutes + ":" +
+                    seconds;
+            return dateString;
+        }
+
+        function log(time, str){
+            it.setLongTime(time);
+            var converted = it.getConvertedTime();
+            //console.log("[", str, "]  : ", converted, '       ' ,  logDate(it.currentDate), ", ", logDate(it.writtenDate));
+            console.log('       ' ,  logDate(it.currentDate), ',' , logDate(it.writtenDate),'     ' ,converted );
+        }
+
 
         console.log('########### test start ################')
 
-        log(current, '현재시간');
+
         log(current - (1000* 40), '40초전');
         log(current - (1000* 60), '1분전');
         log(current - (1000* 60 *3), '3분전');
@@ -43,29 +67,10 @@
         console.log("testEnd");
         console.log(" ");
 
-        function log(time, str){
-            it.setLongTime(time);
-            var converted = it.getConvertedTime();
-            console.log("[", str, "]  : ", converted, '       ' ,  logDate(it.currentDate), ", ", logDate(it.writtenDate));
 
-        }
 
-        function logDate(date ){
-            var month = (date.getMonth()+1) > 9 ? (date.getMonth()+1) : "0" + (date.getMonth()+1);
-            var day = (date.getDate()+1) > 9 ? (date.getDate()+1) : "0" + (date.getDate()+1);
-            var hours = (date.getHours()) > 9 ? (date.getHours()) : "0" + (date.getHours());
-            var minutes = (date.getMinutes()) > 9 ? (date.getMinutes()) : "0" + (date.getMinutes());
-            var seconds = (date.getSeconds()) > 9 ? (date.getSeconds()) : "0" + (date.getSeconds());
 
-            var dateString =
-                    month + "/" +
-                    day + "/" +
-                    date.getFullYear() + " " +
-                    hours + ":" +
-                    minutes + ":" +
-                    seconds;
-            return dateString;
-        }
+
 
 
     </script>

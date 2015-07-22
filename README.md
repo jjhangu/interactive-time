@@ -4,18 +4,15 @@ README this is very first time
 
 1. 최초 한번만 실행
 2. 
-
-'''
-
+```
 <script src='lib/Interactive-time.js'></script>
 <script>
 it.init();
 it.setLongTime(time);
 it.getConvertedTime();
-
 </script>
+```
 
-'''
 
 it.init();
 

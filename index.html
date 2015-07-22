@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="lib/Interactive-time.js"></script>
+</head>
+<body>
+    <span style="font-size: 20px; color: blueviolet"> You can see detail data on console, Please Check </span>
+    <div id="content"> </div>
+    <script>
+        var d = new Date();
+        var current = d.getTime();
+        it.init();
+
+        // 현재시간
+
+        console.log('########### test start ################')
+
+        log(current, '현재시간');
+        log(current - (1000* 40), '40초전');
+        log(current - (1000* 60), '1분전');
+        log(current - (1000* 60 *3), '3분전');
+        log(current - (1000* 60 *60), '1시간');
+        log(current - (1000* 60 *63), '1시간');
+        log(current - (1000* 60 *60 * 20), '20시간');
+        log(current - (1000* 60 *60 * 23), '23시간');
+        log(current - (1000* 60 *60 * 24), '24시간');
+        log(current - (1000* 60 *60 * 25), '25시간');
+        log(current - (1000* 60 *60 * 32), '32시간');
+        log(current - (1000* 60 *60 * 48), '48시간');
+        log(current - (1000* 60 *60 * 24 * 30), '1개월전');
+        log(current - (1000* 60 *60 * 24 * 150), '5개월전');
+        log(current - (1000* 60 *60 * 24 * 180), '6개월전');
+        log(current - (1000* 60 *60 * 24 * 210), '7개월전');
+        log(current - (1000* 60 *60 * 24 * 270), '9개월전');
+        log(current - (1000* 60 *60 * 24 * 365), '1년전');
+        log(current - (1000* 60 *60 * 24 * 366), '1년 1일 전');
+        log(current - (1000* 60 *60 * 24 * 365*2), '2년전');
+
+
+        console.log("총 소요시간 : ", new Date().getTime()- current );
+        console.log("testEnd");
+        console.log(" ");
+
+        function log(time, str){
+            it.setLongTime(time);
+            var converted = it.getConvertedTime();
+            console.log("[", str, "]  : ", converted, '       ' ,  logDate(it.currentDate), ", ", logDate(it.writtenDate));
+
+        }
+
+        function logDate(date ){
+            var month = (date.getMonth()+1) > 9 ? (date.getMonth()+1) : "0" + (date.getMonth()+1);
+            var day = (date.getDate()+1) > 9 ? (date.getDate()+1) : "0" + (date.getDate()+1);
+            var hours = (date.getHours()) > 9 ? (date.getHours()) : "0" + (date.getHours());
+            var minutes = (date.getMinutes()) > 9 ? (date.getMinutes()) : "0" + (date.getMinutes());
+            var seconds = (date.getSeconds()) > 9 ? (date.getSeconds()) : "0" + (date.getSeconds());
+
+            var dateString =
+                    month + "/" +
+                    day + "/" +
+                    date.getFullYear() + " " +
+                    hours + ":" +
+                    minutes + ":" +
+                    seconds;
+            return dateString;
+        }
+
+
+    </script>
+</body>
+</html>

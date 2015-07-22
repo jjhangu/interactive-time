@@ -3,6 +3,20 @@ README this is very first time
 사용 방법
 
 1. 최초 한번만 실행
+2. 
+
+'''
+
+<script src='lib/Interactive-time.js'></script>
+<script>
+it.init();
+it.setLongTime(time);
+it.getConvertedTime();
+
+</script>
+
+'''
+
 it.init();
 
 2. 변환하고자 하는 longtype date 값을 넣음

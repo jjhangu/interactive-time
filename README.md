@@ -1,15 +1,20 @@
-README this is very first time
+실시간 작성일
+============
+
+----
+
 
 사용 방법
+--------
 
-1. 최초 한번만 실행
-2. 
+ 
 ```
 <script src='lib/Interactive-time.js'></script>
 <script>
-it.init();
-it.setLongTime(time);
-it.getConvertedTime();
+  it.init(); // 최초 1번만 실행
+  it.setLongTime(time); // 변환하고자 하는 longtype data
+  var convertedTime= it.getConvertedTime(); // time의  converted time 가져오기
+  document.getElementById('id').innerHTML = convertedTime;
 </script>
 ```
 

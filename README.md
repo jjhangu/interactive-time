@@ -1,1 +1,2 @@
-README 파일입니다
+README this is very first time
+
